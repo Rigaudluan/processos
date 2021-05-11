@@ -2,14 +2,29 @@
     background: var(--white);
     height: 6.5rem;
 
-    display: flex;
-    align-items: center;
+    display: grid;
 
-    padding: 2rem 4rem;
+    padding: 3rem 4rem;
 
     border-bottom: 1px solid var(--lead);
 
     a{
         margin-left: 49px;
+        text-decoration: none;
+        color: var(--lead);
+        letter-spacing:3px;
+
+        &:hover{
+            color: var(--orange);
+            font-weight: 700;
+        }
+
+        &.selected{
+            color: var(--orange);
+            font-weight: 700;
+            border-bottom: 4px solid var(--orange);
+
+            padding-bottom: 2.2rem;
+        }
     }
 }
