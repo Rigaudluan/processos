@@ -2,4 +2,12 @@
    position:absolute;
    bottom:0;
    width:100%;
+   display: inline-block;
+   padding: 0 1% 0.5% 1%;
+}
+.footerObject1{
+   float: left;
+}
+.footerObject2{
+   float: right;
 }
