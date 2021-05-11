@@ -3,11 +3,9 @@ import styles from './styles.module.scss'
 export function Header(){
     return(
         <header className={styles.headerContainer}>
-            <nav>
-                <img src="/logo.png" alt="Cesar Process" />
+                <a href=""><img src="/logo.png" alt="Cesar Process" /></a>
                 <a href="#" className = {styles.selected}> Início </a>
-                <a href="#">Prcessos</a>
-            </nav>
+                <a href="#" className ={styles.off} >Processos</a>
         </header>
     );
 }
