@@ -1,0 +1,36 @@
+.siContainer{
+    text-align: center;
+
+    margin-top: 10rem;
+
+    .siTitle{
+        margin-bottom: 32px;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 22px;
+        line-height: 27px;
+        span{
+            color: var(--orange) !important;
+        }
+    }
+   
+    .siInput{
+        width:462px;
+        height:45px;
+        border: 1px solid var(--lead);
+        border-radius: 10px 0px 0px 10px;
+        padding: 20px;
+        letter-spacing: 5px;
+    }
+
+    button{
+        background: transparent;
+        border-radius: 0px 10px 10px 0px;
+        border: 1px solid var(--lead);
+        width:162px;
+        height:45px;
+        padding: 10px;
+    }
+
+}

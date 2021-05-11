@@ -14,6 +14,8 @@ export default class MyDocument extends Document {
                         integrity=" sha384-B0vP5xmATw1 + K9KRQjQERJvTumQW0nPEUqvOUF6Lp + JQqqvF6Lp3Jouq2FUF6Lp / ZnPqUq2F6Lp / ZnPqUq2F6lC "
                         crossOrigin=" anônimo "
                     />
+                    <title>Cesar Processos</title>
+                    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
                 </Head>
                 <body>
                     <Main />
