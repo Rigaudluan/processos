@@ -1,12 +1,15 @@
 import { Header } from "../components/Header/index";
 import { Footer } from "../components/Footer/index";
+import { MostSearchedProcess } from "../components/MostSearchedProcess/index";
 
 export default function Home() {
   return (
-    <div>
+    <body>
       <Header />
-      <h1>Hello world</h1>
+      <main>
+      <MostSearchedProcess />
+      </main>
       <Footer />
-    </div>
+    </body>
   )
 }
