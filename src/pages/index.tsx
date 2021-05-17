@@ -23,12 +23,9 @@ type HomeProps = {
 export default function Home(props) {
   return (
     <body>
-      <Header />
-      <main>
-      <SearchInput />
+      
       <p> {JSON.stringify(props.processes)}</p>
-      </main>
-      <Footer />
+
     </body>
   )
 }
