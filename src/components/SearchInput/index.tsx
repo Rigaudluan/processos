@@ -9,7 +9,6 @@ export function SearchInput(){
     return(
        <main>
             <div className={styles.siContainer}>
-                <h1 className={styles.siTitle} >Olá, <span>usuário</span>!</h1>
                 <input
                 type="text"
                 placeholder="Reembolso"
