@@ -24,7 +24,7 @@ export default function Home(props) {
   return (
     <body>
       
-      <p> {JSON.stringify(props.processos)}</p>
+      <p>{JSON.stringify(props.Processo)}</p>
 
     </body>
   )
@@ -52,7 +52,7 @@ export const getStaticProps: GetStaticProps = async() => {
 
   return{
     props: {
-      processos: data,
+      Processo
     },
     revalidate: 60 * 10
   }
