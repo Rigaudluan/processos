@@ -9,6 +9,7 @@
     "server": "json-server server.json -w -p 3333"
   },
   "dependencies": {
+    "@types/typescript": "^2.0.0",
     "axios": "^0.21.1",
     "next": "10.2.0",
     "react": "17.0.2",
