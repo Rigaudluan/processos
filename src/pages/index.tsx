@@ -1,10 +1,11 @@
 import { Header } from "../components/Header/index";
 import { Footer } from "../components/Footer/index";
 import { SearchInput } from "../components/SearchInput/index";
-import React from "react";
-import { GetStaticProps } from "next";
+import React, { Props } from "react";
+import next, { GetStaticProps } from "next";
 import { api } from "../services/api";
 import styles from './home.module.scss';
+import Image from 'next/image';
 
 type Processo = {
   id: string,
@@ -21,9 +22,9 @@ type HomeProps = {
 }
 
 
-export default function Home({ mostSearchedProcesses, exclusiveProcesses }) {
+export default function Home({ mostSearchedProcesses, exclusiveProcesses }: HomeProps) {
   return (
-    <body>
+    <body className={styles.homepage}>
       <div className={styles.processesShowcase}>
         <section className={styles.mostSearchedProcesses}>
           <h2>Processos mais pesquisados</h2>
@@ -31,8 +32,18 @@ export default function Home({ mostSearchedProcesses, exclusiveProcesses }) {
           <ul>
             {mostSearchedProcesses.map(Processo => {
               return (
-                <li>
-                  <a href="">{Processo.title}</a>
+                <li key={Processo.id}>
+                  <Image
+                    className={styles.imageDetail}
+                    height={48}
+                    width={48}
+                    src={Processo.thumbnail}
+                    alt={Processo.title}
+                  />
+                  <div className={styles.processDetail}>
+                    <a href="">{Processo.title}</a>
+                    <p>{Processo.description}</p>
+                  </div>
                 </li>
               )
             })}
@@ -44,8 +55,18 @@ export default function Home({ mostSearchedProcesses, exclusiveProcesses }) {
           <ul>
             {exclusiveProcesses.map(Processo => {
               return (
-                <li>
-                  <a href="">{Processo.title}</a>
+                <li key={Processo.id}>
+                  <Image
+                    className={styles.imageDetail}
+                    height={48}
+                    width={48}
+                    src={Processo.thumbnail}
+                    alt={Processo.title}
+                  />
+                  <div className={styles.processDetail}>
+                    <a href="">{Processo.title}</a>
+                    <p>{Processo.description}</p>
+                  </div>
                 </li>
               )
             })}
