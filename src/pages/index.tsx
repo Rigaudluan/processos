@@ -4,6 +4,7 @@ import { SearchInput } from "../components/SearchInput/index";
 import React from "react";
 import { GetStaticProps } from "next";
 import { api } from "../services/api";
+import styles from './home.module.scss';
 
 type Processo = {
   id: string,
@@ -23,26 +24,31 @@ type HomeProps = {
 export default function Home(props) {
   return (
     <body>
-      
-      <p>{JSON.stringify(props.Processo)}</p>
-
+      <div className={styles.processesShowcase}>
+        <section className={styles.mostSearchedProcesses}>
+          <h2>Processos mais pesquisados</h2>
+        </section>
+        <section className={styles.exclusiveProcesses}>
+          <h2>Excluisvos para você</h2>
+        </section>
+      </div>
     </body>
   )
 }
 
-export const getStaticProps: GetStaticProps = async() => {
+export const getStaticProps: GetStaticProps = async () => {
   const { data } = await api.get('processos', {
-    params:{
-    _limit: 12,
-    _sort: 'id',
-    _order: 'desc'
+    params: {
+      _limit: 12,
+      _sort: 'id',
+      _order: 'desc'
     }
   })
 
-  const Processo = data.map(processo =>{
-    return{
+  const Processo = data.map(processo => {
+    return {
       id: processo.id,
-      title: processo.title ,
+      title: processo.title,
       area: processo.area,
       latest_modification: processo.latest_modification,
       thumbnail: processo.thumbnail,
@@ -50,7 +56,7 @@ export const getStaticProps: GetStaticProps = async() => {
     };
   })
 
-  return{
+  return {
     props: {
       Processo
     },
