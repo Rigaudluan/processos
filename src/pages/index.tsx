@@ -1,12 +1,8 @@
-import { Header } from "../components/Header/index";
-import { Footer } from "../components/Footer/index";
-import { SearchInput } from "../components/SearchInput/index";
 import React, { Props } from "react";
 import next, { GetStaticProps } from "next";
 import { api } from "../services/api";
 import styles from './home.module.scss';
 import Image from 'next/image';
-import Processos from "./processoss";
 
 type Processo = {
   id: string,
