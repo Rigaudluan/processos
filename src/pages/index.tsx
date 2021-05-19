@@ -25,8 +25,7 @@ type HomeProps = {
 
 export default function Home({ mostSearchedProcesses, exclusiveProcesses}: HomeProps) {
   return (
-    <div className={styles.processesContainer}>
-
+    <div className={styles.mostSearchedProcessesContainer}>
         {mostSearchedProcesses.map(Processo => {
               return (
                 <div key={Processo.id}>
@@ -66,7 +65,7 @@ export const getStaticProps: GetStaticProps = async () => {
     };
   })
 
-  const mostSearchedProcesses = Processo.slice(0, );
+  const mostSearchedProcesses = Processo.slice(0, 4);
   const exclusiveProcesses = Processo.slice(2, Processo.length);
 
   return {
