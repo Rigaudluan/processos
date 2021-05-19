@@ -6,6 +6,7 @@ import next, { GetStaticProps } from "next";
 import { api } from "../services/api";
 import styles from './home.module.scss';
 import Image from 'next/image';
+import Processos from "./processoss";
 
 type Processo = {
   id: string,
@@ -22,58 +23,26 @@ type HomeProps = {
 }
 
 
-export default function Home({ mostSearchedProcesses, exclusiveProcesses }: HomeProps) {
+export default function Home({ mostSearchedProcesses, exclusiveProcesses}: HomeProps) {
   return (
-    <body className={styles.homepage}>
-      <div className={styles.processesShowcase}>
-        <section className={styles.mostSearchedProcesses}>
-          <h2>Processos mais pesquisados</h2>
+    <div className={styles.processesContainer}>
 
-          <ul>
-            {mostSearchedProcesses.map(Processo => {
+        {mostSearchedProcesses.map(Processo => {
               return (
-                <li key={Processo.id}>
-                  <Image
+                <div key={Processo.id}>
+                    <Image
                     className={styles.imageDetail}
-                    height={48}
-                    width={48}
+                    height={80}
+                    width={80}
                     src={Processo.thumbnail}
                     alt={Processo.title}
-                  />
-                  <div className={styles.processDetail}>
-                    <a href="">{Processo.title}</a>
-                    <p>{Processo.description}</p>
-                  </div>
-                </li>
-              )
+                    />
+                    <a href="">{Processo.title}
+                    <p>{Processo.description}</p></a> 
+              </div>
+                )
             })}
-          </ul>
-        </section>
-        <section className={styles.exclusiveProcesses}>
-          <h2>Excluisvos para você</h2>
-
-          <ul>
-            {exclusiveProcesses.map(Processo => {
-              return (
-                <li key={Processo.id}>
-                  <Image
-                    className={styles.imageDetail}
-                    height={48}
-                    width={48}
-                    src={Processo.thumbnail}
-                    alt={Processo.title}
-                  />
-                  <div className={styles.processDetail}>
-                    <a href="">{Processo.title}</a>
-                    <p>{Processo.description}</p>
-                  </div>
-                </li>
-              )
-            })}
-          </ul>
-        </section>
-      </div>
-    </body>
+    </div>
   )
 }
 
@@ -97,8 +66,8 @@ export const getStaticProps: GetStaticProps = async () => {
     };
   })
 
-  const mostSearchedProcesses = Processo.slice(0, Processo.length);
-  const exclusiveProcesses = Processo.slice(0, Processo.length);
+  const mostSearchedProcesses = Processo.slice(0, );
+  const exclusiveProcesses = Processo.slice(2, Processo.length);
 
   return {
     props: {
