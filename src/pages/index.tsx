@@ -36,7 +36,7 @@ export default function Home({ mostSearchedProcesses, exclusiveProcesses }: Home
                 src={Processo.thumbnail}
                 alt={Processo.title}
               />
-              <a href="">{Processo.title}
+              <a href={`/processos/${Processo.id}`}>{Processo.title}
                 <p>{Processo.description}</p></a>
             </div>
             )
