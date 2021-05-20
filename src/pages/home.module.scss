@@ -1,22 +1,13 @@
 .mostSearchedProcessesContainer{
-  margin: 10vh 0vh 0vh 35vh;
-  
-  .mostSearchedTitle{
-    font-weight: bold;
-    font-size:  2.25vh;
-    padding: 0vh 0vh 0.4vh 13vh;
-  }
+  height: calc(50vh - 1.5rem);
+  overflow-y:scroll;
 
-  .line{
-   margin-left: 13.6vh;
-   width: 21.5vh;
-   border: 1px solid #000;
-   margin-bottom: 3vh;
-  }
+  margin: 2vh 0vh 0vh 35vh;
 
   div{
   display:flex;
   margin-bottom: 1vh;
+  
 
   a{
     text-decoration: none;
@@ -32,3 +23,16 @@
     }
   }
  }
+ .mostSearchedTitle{
+  font-weight: bold;
+  font-size:  2.25vh;
+  padding: 0vh 0vh 0.4vh 13vh;
+  margin: 10vh 0vh 0vh 45vh;
+}
+
+.line{
+ margin-left: 58.5vh;
+ width: 21.5vh;
+ border: 1px solid #000;
+ margin-bottom: 3vh;
+}

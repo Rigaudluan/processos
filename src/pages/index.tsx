@@ -21,26 +21,30 @@ type HomeProps = {
 
 export default function Home({ mostSearchedProcesses, exclusiveProcesses }: HomeProps) {
   return (
-    <div className={styles.mostSearchedProcessesContainer}>
+    <div>
       <p className={styles.mostSearchedTitle}>Principais processos</p>
-      <div className={styles.line}></div>
-      {mostSearchedProcesses.map(Processo => {
-        return (
-          <div key={Processo.id}>
-            <Image
-              className={styles.imageDetail}
-              layout={"fixed"}
-              height={65}
-              width={65}
-              src={Processo.thumbnail}
-              alt={Processo.title}
-            />
-            <a href="">{Processo.title}
-              <p>{Processo.description}</p></a>
-          </div>
-        )
-      })}
+        <div className={styles.line}></div>
+        <div className={styles.mostSearchedProcessesContainer}>
+        {mostSearchedProcesses.map(Processo => {
+          return (
+            <div key={Processo.id}>
+              <Image
+                className={styles.imageDetail}
+                layout={"fixed"}
+                height={65}
+                width={65}
+                src={Processo.thumbnail}
+                alt={Processo.title}
+              />
+              <a href="">{Processo.title}
+                <p>{Processo.description}</p></a>
+            </div>
+            )
+          })}
     </div>
+    </div>
+   
+
   )
 }
 
@@ -64,7 +68,7 @@ export const getStaticProps: GetStaticProps = async () => {
     };
   })
 
-  const mostSearchedProcesses = Processo.slice(0, 4);
+  const mostSearchedProcesses = Processo.slice(0, 5);
   const exclusiveProcesses = Processo.slice(2, Processo.length);
 
   return {
