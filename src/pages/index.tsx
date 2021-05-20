@@ -3,6 +3,7 @@ import next, { GetStaticProps } from "next";
 import { api } from "../services/api";
 import styles from './home.module.scss';
 import Image from 'next/image';
+import Link from "next/link";
 
 type Processo = {
   id: string,
@@ -36,8 +37,11 @@ export default function Home({ mostSearchedProcesses, exclusiveProcesses }: Home
                 src={Processo.thumbnail}
                 alt={Processo.title}
               />
-              <a href={`/processos/${Processo.id}`}>{Processo.title}
+              <Link href={`/processos/${Processo.id}`}>
+                <a >{Processo.title}
                 <p>{Processo.description}</p></a>
+              </Link>
+              
             </div>
             )
           })}
