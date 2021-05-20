@@ -6,8 +6,14 @@ export function Header(){
         <header className={styles.headerContainer}>
                 <ul>
                     <li>
-                        <a href=""><Image 
-                        /></a>
+                        <a href="">
+                            <Image
+                             className={styles.imageDetail}
+                             height={80}
+                             width={80}
+                             src="/logo.png"
+                             />
+                        </a>
                     </li>
                     <li>
                         <a href="#" className = {styles.selected}>Início</a>

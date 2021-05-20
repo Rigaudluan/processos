@@ -1,18 +1,21 @@
 .headerContainer{
+    border-bottom: 1px solid var(--lead);
+    
     ul{
         display: flex;
+        justify-content: left;
+        
 
         li{
             list-style: none;
+            margin-left: 6px;
             a{
                 text-decoration: none;
                 color: var(--black);
-                padding: 10px 2px 10px 2px;
-                margin-left: 600px;
+                padding: 40px 2px 40px 2px;
+                background-color: lawngreen;
 
-                img{
-                    margin-left: 14px;
-                }
+                
             }
         }
     }
