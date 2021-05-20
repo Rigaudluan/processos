@@ -1,12 +1,20 @@
-import styles from './styles.module.scss'
+import styles from './styles.module.scss';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export function Header(){
     return(
         <header className={styles.headerContainer}>
-                <a href={`/`}> <Image src="/logo.png" width={100} height={100} /> </a>
-                <a href={`/`} className = {styles.selected}> Início </a>
-                <a href={`/paginadeprocessos`} className ={styles.off} >Processos</a>
+            <Link href={`/`}>
+                <a> <Image src="/logo.png" width={100} height={100} /> </a>
+            </Link>
+            <Link href={`/`}>
+                 <a  className = {styles.selected}> Início </a>
+            </Link>
+            <Link href={`/paginadeprocessos`}>
+                 <a  className ={styles.off} >Processos</a>
+            </Link>
+               
         </header>
     );
 }
