@@ -11,8 +11,7 @@ function MyApp({ Component, pageProps }) {
       <SearchInput />
      <Component {...pageProps} />
      </main>
-     <br /><br /> <br />
-     <Footer />
+
    </div>
   )
 }
