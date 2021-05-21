@@ -1,6 +1,6 @@
 import styles from './styles.module.scss';
-import Image from 'next/image';
 import Link from 'next/link';
+
 
 export function Header(){
     return(
@@ -9,10 +9,10 @@ export function Header(){
                 <a> Cesar Processos </a>
             </Link>
             <Link href={`/`}>
-                 <a  className = {styles.selected}> Início </a>
+                 <a  className = { styles.selected }> Início </a>
             </Link>
             <Link href={`/paginadeprocessos`}>
-                 <a  className ={styles.off} >Processos</a>
+                 <a className ={ styles.off } >Processos</a>
             </Link>
         </header>
     );

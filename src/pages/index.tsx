@@ -1,9 +1,13 @@
-import React, { Props } from "react";
 import next, { GetStaticProps } from "next";
-import { api } from "../services/api";
+import React, { Props } from "react";
 import styles from './home.module.scss';
 import Image from 'next/image';
 import Link from "next/link";
+
+
+import { api } from "../services/api";
+import { SearchInput } from "../components/SearchInput";
+import { TitleProcess } from "../components/TitleProcess/titleProcess";
 
 type Processo = {
   id: string,
@@ -13,7 +17,6 @@ type Processo = {
   thumbnail: string,
   description: string
 }
-
 type HomeProps = {
   mostSearchedProcesses: Processo[],
   exclusiveProcesses: Processo[]
@@ -22,59 +25,57 @@ type HomeProps = {
 
 export default function Home({ mostSearchedProcesses, exclusiveProcesses }: HomeProps) {
   return (
-    <div className={styles.principalContainer} >
+   <main>
+      <link rel="shortcut icon" href="/favicon.ico" />
+      <TitleProcess name='Página Principal'/>
+      <SearchInput />
+      <div className={styles.principalContainer} >
 
-      
+      <div className={styles.mostSearchedProcessesContainer}>
+        <p className={styles.mostSearchedTitle}>Principais processos</p>
+        {mostSearchedProcesses.map(Processo => {
+          return (
+            <div key={Processo.id}>
+              <Image
+                className={styles.imageDetail}
+                layout={"fixed"}
+                height={65}
+                width={65}
+                src={Processo.thumbnail}
+                alt={Processo.title}
+              />
+              <Link href={`/processos/${Processo.id}`}>
+                <a >{Processo.title}
+                <p>{Processo.description}</p></a>
+              </Link>
+              
+            </div>
+            )
+          })}
+      </div>
 
-        <div className={styles.mostSearchedProcessesContainer}>
-          <p className={styles.mostSearchedTitle}>Principais processos</p>
-          {mostSearchedProcesses.map(Processo => {
-            return (
-              <div key={Processo.id}>
-                <Image
-                  className={styles.imageDetail}
-                  layout={"fixed"}
-                  height={65}
-                  width={65}
-                  src={Processo.thumbnail}
-                  alt={Processo.title}
-                />
-                <Link href={`/processos/${Processo.id}`}>
-                  <a >{Processo.title}
-                  <p>{Processo.description}</p></a>
-                </Link>
-                
-              </div>
-              )
-            })}
+      <div className={styles.exclusiveProcessesContainer}>
+<p className={styles.exclusiveProcessesTitle}>Só pra você</p>
+    {exclusiveProcesses.map(Processo =>{
+      return(
+        <div key={Processo.id}>
+          <Image
+          className={styles.imageDetail}
+          layout={"fixed"}
+          height={65}
+          width={65}
+          src={Processo.thumbnail}
+          alt={Processo.title}
+        />
+         <Link href={`/processos/${Processo.id}`}>
+          <a >{Processo.title}
+          <p>{Processo.description}</p></a>
+        </Link>
         </div>
-
-     
-
-        <div className={styles.exclusiveProcessesContainer}>
-        <p className={styles.exclusiveProcessesTitle}>Só pra você</p>
-            {exclusiveProcesses.map(Processo =>{
-              return(
-                <div key={Processo.id}>
-                  <Image
-                  className={styles.imageDetail}
-                  layout={"fixed"}
-                  height={65}
-                  width={65}
-                  src={Processo.thumbnail}
-                  alt={Processo.title}
-                />
-                 <Link href={`/processos/${Processo.id}`}>
-                  <a >{Processo.title}
-                  <p>{Processo.description}</p></a>
-                </Link>
-                </div>
-              )
-            })}
-        </div>
-
-            
-    </div>
+      )
+    })}
+</div></div>
+   </main>
   )
 }
 
