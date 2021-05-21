@@ -22,33 +22,59 @@ type HomeProps = {
 
 export default function Home({ mostSearchedProcesses, exclusiveProcesses }: HomeProps) {
   return (
-    <div>
-      <p className={styles.mostSearchedTitle}>Principais processos</p>
-        <div className={styles.line}></div>
-        <div className={styles.mostSearchedProcessesContainer}>
-        {mostSearchedProcesses.map(Processo => {
-          return (
-            <div key={Processo.id}>
-              <Image
-                className={styles.imageDetail}
-                layout={"fixed"}
-                height={65}
-                width={65}
-                src={Processo.thumbnail}
-                alt={Processo.title}
-              />
-              <Link href={`/processos/${Processo.id}`}>
-                <a >{Processo.title}
-                <p>{Processo.description}</p></a>
-              </Link>
-              
-            </div>
-            )
-          })}
-    </div>
-    </div>
-   
+    <div className={styles.principalContainer} >
 
+      
+
+        <div className={styles.mostSearchedProcessesContainer}>
+          <p className={styles.mostSearchedTitle}>Principais processos</p>
+          {mostSearchedProcesses.map(Processo => {
+            return (
+              <div key={Processo.id}>
+                <Image
+                  className={styles.imageDetail}
+                  layout={"fixed"}
+                  height={65}
+                  width={65}
+                  src={Processo.thumbnail}
+                  alt={Processo.title}
+                />
+                <Link href={`/processos/${Processo.id}`}>
+                  <a >{Processo.title}
+                  <p>{Processo.description}</p></a>
+                </Link>
+                
+              </div>
+              )
+            })}
+        </div>
+
+     
+
+        <div className={styles.exclusiveProcessesContainer}>
+        <p className={styles.exclusiveProcessesTitle}>Só pra você</p>
+            {exclusiveProcesses.map(Processo =>{
+              return(
+                <div key={Processo.id}>
+                  <Image
+                  className={styles.imageDetail}
+                  layout={"fixed"}
+                  height={65}
+                  width={65}
+                  src={Processo.thumbnail}
+                  alt={Processo.title}
+                />
+                 <Link href={`/processos/${Processo.id}`}>
+                  <a >{Processo.title}
+                  <p>{Processo.description}</p></a>
+                </Link>
+                </div>
+              )
+            })}
+        </div>
+
+            
+    </div>
   )
 }
 
