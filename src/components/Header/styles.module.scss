@@ -3,6 +3,7 @@
     display: flex;
     border-bottom: 2px solid #D8D8D8 ;
 
+
     a{
         text-decoration: none;
         color: var(--lead);
@@ -18,9 +19,11 @@
             color: var(--orange);
             font-weight: 700;
         }
-
-        img{
-        
-        }
+    }
+    
+    .imageDetail{
+        padding-top: initial;
+        padding-bottom: initial;
+        margin-left: 49px;
     }
 }
