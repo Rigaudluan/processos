@@ -73,3 +73,31 @@
    margin-bottom: 3vh;
   }
 }
+
+
+/*Pagina de proceessos*/
+
+.principalContainer2{
+  margin-top: 10vh;
+  margin-left: 70vh;
+
+  div{
+  display:flex;
+  margin-bottom: 1vh;
+  
+
+  a{
+    text-decoration: none;
+    color: var(--black);
+    font-size: 14pt;
+    margin: .5vh;
+
+   }
+    p{
+      width:70%;
+      font-size: 10pt;
+      font-weight: initial;
+      margin: .3vh;
+    }
+  }
+ }
