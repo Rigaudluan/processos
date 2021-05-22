@@ -55,7 +55,6 @@ export const getStaticProps : GetStaticProps = async () => {
         title: TodosProcessos.title,
         thumbnail: TodosProcessos.thumbnail,
         description: TodosProcessos.description
-        
     }
  })
 
