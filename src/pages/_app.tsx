@@ -1,6 +1,5 @@
 import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
-import { SearchInput } from '../components/SearchInput'
 import '../styles/globals.scss'
 
 function MyApp({ Component, pageProps }) {
@@ -8,7 +7,6 @@ function MyApp({ Component, pageProps }) {
    <div>
     <Header />
       <main>
-      <SearchInput />
      <Component {...pageProps} />
      </main>
 
