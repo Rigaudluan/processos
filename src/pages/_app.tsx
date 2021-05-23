@@ -4,13 +4,13 @@ import '../styles/globals.scss'
 
 function MyApp({ Component, pageProps }) {
   return (
-   <div>
-    <Header />
+    <div>
+      <Header />
       <main>
-     <Component {...pageProps} />
-     </main>
-
-   </div>
+        <Component {...pageProps} />
+      </main>
+      <Footer />
+    </div>
   )
 }
 
