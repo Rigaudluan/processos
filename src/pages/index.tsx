@@ -56,11 +56,8 @@ export default function Home({ mostSearchedProcesses, exclusiveProcesses }: Home
           {exclusiveProcesses.map(Processo => {
             return (
               <div key={Processo.id}>
-                <Image
+                <img
                   className={styles.imageDetail}
-                  layout={"fixed"}
-                  height={65}
-                  width={65}
                   src={Processo.thumbnail}
                   alt={Processo.title}
                 />
