@@ -1,17 +1,25 @@
 .principalContainer{
   display:grid;
   grid-template-rows: 5vh 65vh 5vh;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 0.25fr 1.75fr 1.75fr 0.25fr;
   grid-template-areas: ". . . ."
                        ". A B ."
                        ". . . .";
+  column-gap: 2vw;
 
 
   .mostSearchedProcessesContainer{
     grid-area: A;
+    //background-color: yellow;
     
     height: calc(50vh - 1.5rem);
     overflow-y:scroll;
+
+    div{
+      display:flex;
+      margin: 1.5vh 0 1.5vh 0;
+      min-height: 5vh;
+    }
 
     a{
       text-decoration: none;
@@ -19,26 +27,36 @@
     }
 
     .mostSearchedTitle{
-
     font-weight: bolder;
-    font-size: 2.25vh;
+    font-size: 2.25vh;      
     }
 
   }
     
   .exclusiveProcessesContainer{
     grid-area: B;
-
+    //background-color: green;
+    
     a{
       text-decoration: none;
       color: var(--black);
     }
 
-  .exclusiveProcessesTitle{
-    font-weight: bolder;
-    font-size: 2.25vh;
-    
+    div{
+      display:flex;
+      margin: 2.5vh 0 2.5vh 0;
+      min-height: 5vh;
     }
+
+  .exclusiveProcessesTitle{
+    font-size: 2.25vh;
+    font-weight: bolder;
+    }
+  }
+
+  .imageDetail{
+    width: 45px;
+    height: 45px;
   }
 }
 
