@@ -1,0 +1,53 @@
+.principalContainer{
+
+    max-width: 95vw;
+
+    .titleArea{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        a{
+            margin: 40px 0px 0px 0px;
+            justify-self: end;  
+        }
+        .title{
+            margin: 40px 0px 20px 10px;
+            font-size: 14pt;
+        }
+    }
+    
+    .container{
+        margin: 0px 0px 0px 0px;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 30px;
+    
+        .files{
+            margin: 0px 0px 0px 40px;
+            background-color: var(--grey) ;
+            min-height:  400px;
+            max-width: 400px;
+        }
+        button{
+            margin-top: 20px;
+            padding: 0px 2px 0px 2px;
+            margin-left: 35vh;
+    
+            background: transparent;
+    
+            border-radius: 100px;
+            border: 1px solid #000000;
+    
+            &:hover{
+                background: var(--lead);
+    
+            }
+        }
+        .renderFiles{
+            margin: 0px 0px 0px 0px;
+            background-color: var(--grey);
+            min-height:  800px;
+            max-width: 1000px;
+        }
+    }
+    
+}

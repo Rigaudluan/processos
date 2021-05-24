@@ -21,8 +21,6 @@ type HomeProps = {
   mostSearchedProcesses: Processo[],
   exclusiveProcesses: Processo[]
 }
-
-
 export default function Home({ mostSearchedProcesses, exclusiveProcesses }: HomeProps) {
   return (
    <main>
@@ -78,7 +76,6 @@ export default function Home({ mostSearchedProcesses, exclusiveProcesses }: Home
    </main>
   )
 }
-
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await api.get('processos', {
     params: {
