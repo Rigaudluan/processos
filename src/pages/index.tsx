@@ -23,57 +23,51 @@ type HomeProps = {
 }
 export default function Home({ mostSearchedProcesses, exclusiveProcesses }: HomeProps) {
   return (
-   <main>
+    <main>
       <link rel="shortcut icon" href="/favicon.ico" />
-      <TitleProcess name='Página Principal'/>
+      <TitleProcess name='Página Principal' />
       <SearchInput />
       <div className={styles.principalContainer} >
 
-      <div className={styles.mostSearchedProcessesContainer}>
-        <p className={styles.mostSearchedTitle}>Principais processos</p>
-        {mostSearchedProcesses.map(Processo => {
-          return (
-            <div key={Processo.id}>
-              <Image
-                className={styles.imageDetail}
-                layout={"fixed"}
-                height={65}
-                width={65}
-                src={Processo.thumbnail}
-                alt={Processo.title}
-              />
-              <Link href={`/processos/${Processo.id}`}>
-                <a >{Processo.title}
-                <p>{Processo.description}</p></a>
-              </Link>
-              
-            </div>
+        <div className={styles.mostSearchedProcessesContainer}>
+          <p className={styles.mostSearchedTitle}>Principais processos</p>
+          {mostSearchedProcesses.map(Processo => {
+            return (
+              <div key={Processo.id}>
+                <img
+                  className={styles.imageDetail}
+                  src={Processo.thumbnail}
+                  alt={Processo.title}
+                />
+                <Link href={`/processos/${Processo.id}`}>
+                  <a >{Processo.title}
+                    <p>{Processo.description}</p></a>
+                </Link>
+
+              </div>
             )
           })}
-      </div>
-
-      <div className={styles.exclusiveProcessesContainer}>
-<p className={styles.exclusiveProcessesTitle}>Só pra você</p>
-    {exclusiveProcesses.map(Processo =>{
-      return(
-        <div key={Processo.id}>
-          <Image
-          className={styles.imageDetail}
-          layout={"fixed"}
-          height={65}
-          width={65}
-          src={Processo.thumbnail}
-          alt={Processo.title}
-        />
-         <Link href={`/processos/${Processo.id}`}>
-          <a >{Processo.title}
-          <p>{Processo.description}</p></a>
-        </Link>
         </div>
-      )
-    })}
-</div></div>
-   </main>
+
+        <div className={styles.exclusiveProcessesContainer}>
+          <p className={styles.exclusiveProcessesTitle}>Só pra você</p>
+          {exclusiveProcesses.map(Processo => {
+            return (
+              <div key={Processo.id}>
+                <img
+                  className={styles.imageDetail}
+                  src={Processo.thumbnail}
+                  alt={Processo.title}
+                />
+                <Link href={`/processos/${Processo.id}`}>
+                  <a >{Processo.title}
+                    <p>{Processo.description}</p></a>
+                </Link>
+              </div>
+            )
+          })}
+        </div></div>
+    </main>
   )
 }
 export const getStaticProps: GetStaticProps = async () => {
