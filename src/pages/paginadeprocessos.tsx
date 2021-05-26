@@ -22,17 +22,20 @@ export default function paginadeprocessos({processos }: ProcessoProps){
         <main>
             <TitleProcess name='Processos'/>
             <SearchInput />
-
-            <ul className={styles.principalContainer2}>
+            <ul >
             {processos.map(processo => {
                 return(
-                    <div key={processo.id}>
-                        <img src={processo.thumbnail} alt="" />
+                    <div className={styles.principalContainer2} key={processo.id}>
+                        <div>
+                        <img src={processo.thumbnail} alt=""/>
+                        </div>
+                        <div>
                         <Link href={`/processos/${processo.id}`}>
                             <a >{processo.title}
                             <p>{processo.description}</p></a>
                         </Link>
                      </div>
+                    </div>
                 )
             })}
             </ul>
