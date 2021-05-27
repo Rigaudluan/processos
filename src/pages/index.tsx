@@ -4,74 +4,80 @@ import styles from './home.module.scss';
 import Image from 'next/image';
 import Link from "next/link";
 
-
+import { typeFunc } from "../utils/typeSelect"
 import { api } from "../services/api";
 import { SearchInput } from "../components/SearchInput";
 import { TitleProcess } from "../components/TitleProcess/titleProcess";
 
 type Processo = {
   id: string,
-  title: string,
-  area: string,
-  latest_modification: string,
+  name: string,
   thumbnail: string,
-  description: string
 }
 type HomeProps = {
   mostSearchedProcesses: Processo[],
   exclusiveProcesses: Processo[]
 }
+
+var file;
+
+
 export default function Home({ mostSearchedProcesses, exclusiveProcesses }: HomeProps) {
+
   return (
     <main>
       <link rel="shortcut icon" href="/favicon.ico" />
       <TitleProcess name='Página Principal' />
       <SearchInput />
-      <div className={styles.principalContainer} >
+      <div className={styles.principalContainer}>
 
-        <div className={styles.mostSearchedProcessesContainer}>
-          <p className={styles.mostSearchedTitle}>Principais processos</p>
-          {mostSearchedProcesses.map(Processo => {
-            return (
-              <div key={Processo.id}>
-                <img
-                  className={styles.imageDetail}
-                  src={Processo.thumbnail}
-                  alt={Processo.title}
-                />
-                <Link href={`/processos/${Processo.id}`}>
-                  <a >{Processo.title}
-                    <p>{Processo.description}</p></a>
-                </Link>
+          <div className={styles.mostSearchedProcesses}>
+            <h3>Principais Processos</h3>
+            {mostSearchedProcesses.map(Processos =>{
+              return(
+                <main key={Processos.id}>
+                  <div className={styles.img} >
+                    <img src={Processos.thumbnail} alt={Processos.name}/>
+                  </div>
 
-              </div>
-            )
-          })}
-        </div>
+                  <div className={styles.title}>
+                    <Link href={`/files/${Processos.id}`}>
+                      <a>{Processos.name}</a>
+                    </Link>
+                  </div>
 
-        <div className={styles.exclusiveProcessesContainer}>
-          <p className={styles.exclusiveProcessesTitle}>Só pra você</p>
-          {exclusiveProcesses.map(Processo => {
-            return (
-              <div key={Processo.id}>
-                <img
-                  className={styles.imageDetail}
-                  src={Processo.thumbnail}
-                  alt={Processo.title}
-                />
-                <Link href={`/processos/${Processo.id}`}>
-                  <a >{Processo.title}
-                    <p>{Processo.description}</p></a>
-                </Link>
-              </div>
-            )
-          })}
-        </div></div>
+                </main>
+              )
+            })}
+          </div>
+          <hr />
+          <div className={styles.exclusiveProcesses}>
+          <h3>Exclusivamente pra você</h3>
+          {exclusiveProcesses.map(Processos =>{
+              return(
+                <main>
+
+                  <div className={styles.img} >
+                    <img src={Processos.thumbnail} alt={Processos.name}/>
+                  </div>
+
+                  <div className={styles.title}>
+                    <Link href={`/files/${Processos.id}`}>
+                      <a>{Processos.name}</a>
+                    </Link>
+                  </div>
+
+                </main>
+              )
+            })}
+          </div>
+
+      </div>
     </main>
   )
 }
 export const getStaticProps: GetStaticProps = async () => {
-  const { data } = await api.get('processos', {
+  const { data } = await api.get('files', {
     params: {
       _limit: 12,
       _sort: 'id',
@@ -82,12 +88,9 @@ export const getStaticProps: GetStaticProps = async () => {
   const Processo = data.map(processo => {
     return {
       id: processo.id,
-      title: processo.title,
-      area: processo.area,
-      latest_modification: processo.latest_modification,
-      thumbnail: processo.thumbnail,
-      description: processo.description
-    };
+      name: processo.name,
+      thumbnail: processo.iconLink
+    }
   })
 
   const mostSearchedProcesses = Processo.slice(0, 5);
@@ -98,7 +101,7 @@ export const getStaticProps: GetStaticProps = async () => {
       mostSearchedProcesses,
       exclusiveProcesses,
     },
-    revalidate: 60 * 10
+    revalidate: 60 * 10 
   }
 }
 
