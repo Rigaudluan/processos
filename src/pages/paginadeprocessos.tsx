@@ -8,10 +8,10 @@ import Image from 'next/image';
 
 type TodosProcessos = {
     id: string,
-    title: string,
-    thumbnail: string,
-    description: string
+    name: string,
+    iconLink: string
 }
+
 type ProcessoProps = {
     processos : TodosProcessos[];
 }
@@ -26,13 +26,12 @@ export default function paginadeprocessos({processos }: ProcessoProps){
             {processos.map(processo => {
                 return(
                     <div className={styles.principalContainer2} key={processo.id}>
-                        <div>
-                        <img src={processo.thumbnail} alt=""/>
+                        <div className={styles.img}>
+                        <img src={processo.iconLink} alt={processo.name}/>
                         </div>
                         <div>
-                        <Link href={`/processos/${processo.id}`}>
-                            <a >{processo.title}
-                            <p>{processo.description}</p></a>
+                        <Link href={`/files/${processo.id}`}>
+                            <a>{processo.name}</a>
                         </Link>
                      </div>
                     </div>
@@ -44,7 +43,7 @@ export default function paginadeprocessos({processos }: ProcessoProps){
 }
 
 export const getStaticProps : GetStaticProps = async () => {
- const { data } = await api.get('processos', {
+ const { data } = await api.get('files', {
      params:{
          _limit: 12,
          _sort: 'id',
@@ -55,9 +54,8 @@ export const getStaticProps : GetStaticProps = async () => {
  const todososprocessos = data.map(TodosProcessos => {
     return{
         id: TodosProcessos.id,
-        title: TodosProcessos.title,
-        thumbnail: TodosProcessos.thumbnail,
-        description: TodosProcessos.description
+        name: TodosProcessos.name,
+        iconLink: TodosProcessos.iconLink
     }
  })
 
