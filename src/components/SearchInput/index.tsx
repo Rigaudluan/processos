@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Formik, { useFormik } from 'formik';
+import styles from './styles.module.scss';
 
 export function SearchInput() {
   function useFormik({
@@ -36,8 +37,11 @@ export function SearchInput() {
       alert('Olha o console!');
     }}
     >
-      <div className="formField">
+
+      <div className={styles.siContainer}>
+        <h2 className={styles.siTitle}>Faça sua pesquisa!</h2>
         <input
+          className={styles.siInput}
           type="text"
           placeholder="Ex. : Reembolso"
           name="userText"
@@ -45,12 +49,12 @@ export function SearchInput() {
           onChange={formik.handleChange}
           value={formik.values.userText}
         />
+        <button type="submit">
+          pesquisar
+        </button>
         {/* <span class="formField__error">This field is required</span> */}
       </div>
 
-      <button type="submit">
-        pesquisar
-        </button>
     </form>
   );
 
