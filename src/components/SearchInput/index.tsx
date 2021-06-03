@@ -39,7 +39,6 @@ export function SearchInput() {
     >
 
       <div className={styles.siContainer}>
-        <h2 className={styles.siTitle}>Faça sua pesquisa!</h2>
         <input
           className={styles.siInput}
           type="text"
