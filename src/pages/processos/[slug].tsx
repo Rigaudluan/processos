@@ -88,7 +88,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const { slug } = ctx.params;
 
-  const {data} = await api.get(`/processos/${slug}`)
+  const {data} = await api.get(`/files/${slug}`)
 
   const processo = {
       id: data.id,
