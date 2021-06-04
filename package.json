@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "server": "json-server server.json -w -p 3333"
+    "start": "next start"
   },
   "dependencies": {
     "@types/typescript": "^2.0.0",
