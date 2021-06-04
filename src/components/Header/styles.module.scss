@@ -2,6 +2,11 @@
     background: var(--white);
     display: flex;
     border-bottom: 2px solid #D8D8D8 ;
+    
+    button{
+        background-color: transparent;
+        border: none;
+    }
 
 
     a{
