@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Formik, { useFormik } from 'formik';
 import styles from './styles.module.scss';
+import { api } from '../../services/api';
+
 
 export function SearchInput() {
   function useFormik({
@@ -22,19 +24,18 @@ export function SearchInput() {
       handleChange,
     };
   }
-
   const formik = useFormik({
     initialValues: {
       userText: '',
 
     },
   });
-
   return (
-    <form onSubmit={(event) => {
+    <div>
+      <form onSubmit={(event) => {
       event.preventDefault();
       console.log(formik.values);
-      alert('Olha o console!');
+      onSearchProcesses(formik.values.userText)
     }}
     >
 
@@ -51,10 +52,26 @@ export function SearchInput() {
         <button type="submit">
           pesquisar
         </button>
-        {/* <span class="formField__error">This field is required</span> */}
       </div>
-
     </form>
+    <p></p>
+    </div>
   );
+}
 
+
+async function onSearchProcesses(props){
+
+  let results = props
+  console.log()
+  const {data} = await api.get(`pesquisa/${results}`)
+
+const processes = data.files.map(processes => {
+      return{
+          id: processes.id,
+          name: processes.name,
+          iconLink: processes.iconLink
+      }
+    }
+  )
 }
