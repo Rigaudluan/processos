@@ -9,11 +9,8 @@ import styles from './process.module.scss'
 
 type Processo = {
   id: string,
-  title: string,
-  area: string,
-  latest_modification: string,
-  thumbnail: string,
-  description: string
+  name: string,
+  iconLink: string
 };
 type ProcessoProps = {
   processo: Processo
@@ -27,7 +24,7 @@ const router = useRouter();
     return(
       <div>
          <Head>
-      <title>{processo.title} | Cesar Processos </title>
+      <title>{processo.name} | Cesar Processos </title>
       </Head>
         <p>Carregando...</p>
       </div>
@@ -38,8 +35,7 @@ const router = useRouter();
     return(
       <div className={styles.principalContainer}>
          <div className={styles.titleArea}>
-          <h1 className={styles.title}>{processo.title}</h1> 
-          <a href=""><img src="/settings.svg" alt="" /></a>
+          <h1 className={styles.title}>{processo.name}</h1> 
          </div>
 
          <div className={styles.container}>
@@ -47,9 +43,6 @@ const router = useRouter();
           <div  className={styles.files}>
   .
           </div>
-          <button>
-            <img src="/plus.svg" alt="" />
-          </button>
        </div>
         <div className={styles.renderFiles}>
 .
@@ -62,22 +55,15 @@ const router = useRouter();
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const {data} = await api.get('processos', {
+  const {data} = await api.get('files')
 
-     params: {
-      _limit: 2,
-      order: 'desc',
-    }
-  });
-
-  const paths = data.map(process =>{
+  const paths = data.files.map(process =>{
     return{
       params:{
         slug : process.id
       }
     }
   })
-
       return{
         paths,
         fallback: 'blocking'
@@ -88,20 +74,19 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const { slug } = ctx.params;
 
-  const {data} = await api.get(`/files/${slug}`)
+  const {data} = await api.get(`processo/${slug}`)
 
-  const processo = {
-      id: data.id,
-      title: data.title,
-      area: data.area,
-      latest_modification: data.latest_modification,
-      thumbnail: data.thumbnail,
-      description: data.description
-    };
+  const processo = data.files.map(TodosProcessos => {
+    return{
+        id: TodosProcessos.id,
+        name: TodosProcessos.name,
+        iconLink: TodosProcessos.iconLink
+    }
+ })
 
   return {
     props: {
-      processo,
+      processo: data.files,
     },
     revalidate: 60 * 10
   }

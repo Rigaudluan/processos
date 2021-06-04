@@ -29,7 +29,7 @@ export default function paginadeprocessos({processos }: ProcessoProps){
                         <img src={processo.iconLink} alt={processo.name}/>
                         </div>
                         <div>
-                        <Link href={`/files/${processo.id}`}>
+                        <Link href={`processo/${processo.id}`}>
                             <a>{processo.name}</a>
                         </Link>
                      </div>
