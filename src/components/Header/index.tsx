@@ -1,22 +1,23 @@
 import styles from './styles.module.scss';
 import Link from 'next/link';
-import Image from 'next/image';;
+import Image from 'next/image';
+import {useRouter} from 'next/router'
 
-var page = true
 
 
-function initialPage(){
-    page = true
-}
-
-function pageProcess(){
-    page = false
-}
 
 export function Header(){
+
+    /* Descobre página e muda o estado do page */
+    var page = true;
+    const router = useRouter();
+    const RouterName = router.pathname
+     if(RouterName == "/"){
+            page = true
+        }else page = !page
+    
     return(
         <header className={styles.headerContainer}>
-           <button onClick={initialPage} >
             <Link href={`/`}>
                     <a className={styles.imageDetail}>
                     <Image 
@@ -26,17 +27,12 @@ export function Header(){
                     />
                     </a>
                 </Link>
-           </button>
-           <button onClick={initialPage}>
                 <Link href={`/`}>
                     <a className =  { page? styles.selected : styles.off }> Início </a>
                 </Link>
-           </button>
-            <button onClick={pageProcess}>
-                <Link href={`/paginadeprocessos`}>
+                <Link href={`/processos`}>
                     <a className = { page? styles.off  : styles.selected} >Processos</a>
                 </Link>
-            </button>
         </header>
     );
 }
