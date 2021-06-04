@@ -4,7 +4,6 @@ import { SearchInput } from "../components/SearchInput";
 import { TitleProcess } from "../components/TitleProcess/titleProcess";
 import { api } from "../services/api";
 import Link from "next/link";
-import Image from 'next/image';
 
 type TodosProcessos = {
     id: string,
@@ -43,15 +42,9 @@ export default function paginadeprocessos({processos }: ProcessoProps){
 }
 
 export const getStaticProps : GetStaticProps = async () => {
- const { data } = await api.get('files', {
-     params:{
-         _limit: 12,
-         _sort: 'id',
-         _order: 'desc'
-     }
- })
+ const { data } = await api.get('files')
 
- const todososprocessos = data.map(TodosProcessos => {
+ const todososprocessos = data.files.map(TodosProcessos => {
     return{
         id: TodosProcessos.id,
         name: TodosProcessos.name,
@@ -61,7 +54,7 @@ export const getStaticProps : GetStaticProps = async () => {
 
     return{
         props:{
-            processos: data,
+            processos: data.files,
         },
         revalidate: 60 * 10
     }  
