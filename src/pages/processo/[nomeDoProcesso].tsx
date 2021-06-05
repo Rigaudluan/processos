@@ -19,20 +19,18 @@ type ProcessoProps = {
 
 export default function paginadeprocessos({ processos }: ProcessoProps) {
     return (
-        <div className={styles.container}>
-            <header className={styles.header}>
+        <div className={styles.principalContainer}>
+
                 <button>
                     <img src="/arrow-left.svg" alt="voltar" />
                 </button>
-            </header>
-            <div className={styles.nomeProcess}>
 
-            </div>
-            <main className={styles.main}>
-                <ul >
+           <div className={styles.secondContainer} >
+
+                <div className={styles.filesInContainer}>
+            <ul >
                     {processos.map(processo => {
-                        return (//<Image src="/arrow-left.svg" className={styles.goBack} width={28} height={28}/>
-
+                        return (
                             <div className={styles.process} key={processo.id}>
                                 <div className={styles.image}>
                                     <img src={processo.iconLink} alt={processo.name} />
@@ -46,7 +44,15 @@ export default function paginadeprocessos({ processos }: ProcessoProps) {
                         )
                     })}
                 </ul>
-            </main>
+            </div>
+                
+                <div className={styles.openFileContainer} >
+                <iframe> 
+                    
+                </iframe>
+                </div>
+
+           </div>
         </div>
     )
 }

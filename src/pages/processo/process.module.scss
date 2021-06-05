@@ -1,28 +1,16 @@
-.header{
-    button{
-        background: none;
-        border: none;
+.principalContainer{
+
+    .secondContainer{
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-gap: 10px;
+
+        .filesInContainer{
+        background-color: var(--grey);
+        }
+        .openFileContainer{
+        background-color: var(--grey);
+        }
     }
-}
 
-
-
-.process{
-    box-sizing: border-box;
-    display: grid;
-    grid-template-columns: 1.25% 98.75%;
-    margin: 0.5rem 0rem 0rem 0rem;
-
-
-    .image{
-        color: gray;
-       }
-       
-    a{
-        justify-self: stretch;
-        text-decoration: none;
-        color: var(--black);
-        font-size: 14pt;
-        width: 2;
-    }
 }
