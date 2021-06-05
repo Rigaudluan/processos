@@ -1,38 +1,28 @@
-.principalContainer{
-
-    max-width: 95vw;
-
-    .titleArea{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        a{
-            margin: 40px 0px 0px 0px;
-            justify-self: end;  
-        }
-        .title{
-            margin: 40px 0px 20px 10px;
-            font-size: 14pt;
-        }
+.header{
+    button{
+        background: none;
+        border: none;
     }
-    
-    .container{
-        margin: 0px 0px 0px 0px;
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        gap: 30px;
-    
-        .files{
-            margin: 0px 0px 0px 40px;
-            background-color: var(--grey) ;
-            min-height:  400px;
-            max-width: 400px;
-        }
-        .renderFiles{
-            margin: 0px 0px 0px 0px;
-            background-color: var(--grey);
-            min-height:  800px;
-            max-width: 1000px;
-        }
+}
+
+
+
+.process{
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1.25% 98.75%;
+    margin: 0.5rem 0rem 0rem 0rem;
+
+
+    .image{
+        color: gray;
+       }
+       
+    a{
+        justify-self: stretch;
+        text-decoration: none;
+        color: var(--black);
+        font-size: 14pt;
+        width: 2;
     }
-    
 }
