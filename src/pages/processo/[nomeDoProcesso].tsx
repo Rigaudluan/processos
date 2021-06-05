@@ -18,22 +18,24 @@ type ProcessoProps = {
 
 export default function paginadeprocessos({processos }: ProcessoProps){
     return(
-        <main>
-            <ul >
-            {processos.map(processo => {
-                return(
-                    <div className={styles.principalContainer2} key={processo.id}>
-                        <div className={styles.img}>
-                        <img src={processo.iconLink} alt={processo.name}/>
-                        </div>
-                        <div>
-                        <Link href={`processo/${processo.id}`}>
-                            <a>{processo.name}</a>
-                        </Link>
-                     </div>
-                    </div>
+                <main>
+                    <ul >
+                        {processos.map(processo => {
+                            return(
+                                <div className={styles.principalContainer2} key={processo.id}>
+                                    <div className={styles.img}>
+                                    <img src={processo.iconLink} alt={processo.name}/>
+                                    </div>
+                                    <div>
+                                    <Link href={`processo/${processo.id}`}>
+                                        <a>{processo.name}</a>
+                                    </Link>
+                                </div>
+                                </div>
+                        )
+                    }
                 )
-            })}
+            }
             </ul>
         </main>
     )
@@ -49,10 +51,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps : GetStaticProps = async (ctx) =>{
 
   const {nomeDoProcesso} = ctx.params;
-
-  const {data} = await api.get(`/processo/${nomeDoProcesso}`)
- 
-
+  const {data} = await api.get(`/processo/${nomeDoProcesso}`);
   const processo = data.files.map(process =>{
         return{
           id: process.id,
