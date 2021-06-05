@@ -3,16 +3,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {useRouter} from 'next/router'
 
-
-
-
 export function Header(){
 
     /* Descobre página e muda o estado do page */
     var page = true;
     const router = useRouter();
     const RouterName = router.pathname
-     if(RouterName == "/"){
+     if(RouterName == "/paginainicial"){
             page = true
         }else page = !page
     
@@ -27,7 +24,7 @@ export function Header(){
                     />
                     </a>
                 </Link>
-                <Link href={`/`}>
+                <Link href={`/paginainicial`}>
                     <a className =  { page? styles.selected : styles.off }> Início </a>
                 </Link>
                 <Link href={`/processos`}>

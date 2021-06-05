@@ -19,6 +19,7 @@ type ProcessoProps = {
 export default function paginadeprocessos({processos }: ProcessoProps){
     return(
         <main>
+            
             <TitleProcess name='Processos'/>
             <SearchInput />
             <ul >
