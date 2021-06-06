@@ -20,9 +20,7 @@ function MyApp({ Component, pageProps }) {
 
   if(user === null){
     return(
-
       <Login onReceiveGoogle={actionLoginDataGoogle}/>
-      
     )
 
 

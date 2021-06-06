@@ -4,6 +4,7 @@ import ApiFB from '../apiFB'
 
 export default function login({onReceiveGoogle}){
 
+    //Logar conta no google
     const actionLoginGoogle = async () =>{
      let result = await ApiFB.googleLogar();
 
