@@ -17,7 +17,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ### Pré-requisitos
 
-Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas: **Node.js**. Além disto é bom ter um editor para trabalhar com o código como **VSCode**.
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas: **Node.js** e **Yarn**. Além disto é bom ter um editor para trabalhar com o código como **VSCode**.
 
 ### 🎲 Rodando o Front End :
 
@@ -25,18 +25,12 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 # Clone este repositório
 $ git clone https://github.com/theuslefone/processos.git
 
-# Abra o repositório em seu editor(terminal)
-$ Code . (no caso do VSCode)
-
-# Instale o yarn
-$ npm install -g yarn
-
-# Instale as dependências(que estão no package.json)
-$ yarn add
+# Instale as dependências
+$ yarn add sass react react-router-dom react-dom yup next formik firebase axios blip-chat-widget json-server typescript @types/node @types/react @types/typescript
 
 # Execute a aplicação em modo de desenvolvimento
 $ yarn dev
 
-# O servidor inciará na porta:3333 - acesse http://localhost:3333 
+# O servidor inciará na porta:3000 - acesse http://localhost:3000 
 ```
 
