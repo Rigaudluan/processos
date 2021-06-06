@@ -20,7 +20,6 @@ type ProcessoProps = {
 export default function paginadeprocessos({ processos }: ProcessoProps) {
     return (
         <div className={styles.principalContainer}>
-
             <button>
                 <img src="/arrow-left.svg" alt="voltar" />
             </button>
@@ -35,7 +34,7 @@ export default function paginadeprocessos({ processos }: ProcessoProps) {
                                     <div className={styles.image}>
                                         <img src={processo.iconLink} alt={processo.name} />
                                     </div>
-                                    <div>
+                                    <div className={styles.processText}>
                                         <Link href={`processo/${processo.id}`}>
                                             <a>{processo.name}</a>
                                         </Link>
