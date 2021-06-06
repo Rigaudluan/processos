@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Formik, { useFormik } from 'formik';
 import styles from './styles.module.scss';
 import { api } from '../../services/api';
+import { onSearchProcesses } from '../../pages/pesquisa';
 
 
 export function SearchInput() {
@@ -60,18 +61,3 @@ export function SearchInput() {
 }
 
 
-async function onSearchProcesses(props){
-
-  let results = props
-  console.log()
-  const {data} = await api.get(`pesquisa/${results}`)
-
-const processes = data.files.map(processes => {
-      return{
-          id: processes.id,
-          name: processes.name,
-          iconLink: processes.iconLink
-      }
-    }
-  )
-}
