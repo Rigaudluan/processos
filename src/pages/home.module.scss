@@ -34,6 +34,7 @@
       display: grid;
       grid-template-columns: 30% 70%;
       margin: 4rem 0rem 0rem 0rem;
+      
 
       a{
         justify-self: start;
@@ -41,7 +42,7 @@
         color: var(--black);
         font-size: 14pt;
         width: 2;
-  
+        
       }
       .img{
         text-align: end;
@@ -86,6 +87,8 @@
   display: grid;
   grid-template-columns: 40% 60%;
   margin: 1rem 0rem 0rem 0rem;
+  padding-bottom: 2vh;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 
     a{
       justify-self: start;

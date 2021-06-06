@@ -1,12 +1,34 @@
 .principalContainer{
 
+    button{
+        border: none;
+        background: transparent;
+    }
+
+    .process{
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+        margin: 2vh 0vh 2vh 2vh;
+        padding-bottom: 2vh;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+        .image{
+            img{
+                justify-self: end;
+            }           
+        }        
+    }
+
     .secondContainer{
         display: grid;
         grid-template-columns: 1fr 3fr;
         grid-gap: 10px;
 
         .filesInContainer{
-        background-color: var(--grey);
+            a{
+                text-decoration: none;
+                color: black;
+                
+            }
         }
         .openFileContainer{
         background-color: var(--grey);
