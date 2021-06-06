@@ -1,3 +1,21 @@
+/*Login*/
+.loginContainer{
+  background: var(--white);
+  border: 1px solid var(--lead);
+  max-width: 50vw;
+  min-height: 50vh;
+
+  margin: auto;
+  margin-top: 10vh;
+  text-align: center;
+  border-radius: 10px;
+  padding: 40px 0px 40px 0px;
+
+  h1{
+    font-weight:lighter;
+  }
+}
+
 /* Página principal*/
 .principalContainer{
   box-sizing: border-box;
@@ -63,7 +81,6 @@
 
 
 /*Pagina de proceessos*/
-
 .principalContainer2{
   box-sizing: border-box;
   display: grid;
