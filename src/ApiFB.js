@@ -4,7 +4,7 @@ import 'firebase/firebase-firestore'
 
 import firebaseConfig from './fireabaseConfig'
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+const firebaseApp = !firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app()
 
 //decide o database
 const db = firebaseApp.firestore();
