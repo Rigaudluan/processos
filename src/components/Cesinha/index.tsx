@@ -1,4 +1,5 @@
 import styles from './styles.module.scss'
+import { BlipChat } from "blip-chat-widget";
 
 export default function Cesinha() {
     return (
