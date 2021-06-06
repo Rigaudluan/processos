@@ -12,51 +12,55 @@ type TodosProcessos = {
 }
 
 type ProcessoProps = {
-    processos : TodosProcessos[];
+    processos: TodosProcessos[];
 }
-  
 
-export default function paginadeprocessos({processos }: ProcessoProps){
-    return(
+
+export default function paginadeprocessos({ processos }: ProcessoProps) {
+    return (
         <main>
-            
-            <TitleProcess name='Processos'/>
+
+            <TitleProcess name='Processos' />
             <SearchInput />
             <ul >
-            {processos.map(processo => {
-                return(
-                    <div className={styles.principalContainer2} key={processo.id}>
-                        <div className={styles.img}>
-                        <img src={processo.iconLink} alt={processo.name}/>
+                {processos.map(processo => {
+                    return (
+                        <div className={styles.containerGeral}>
+                            <div></div>
+                            <div className={styles.principalContainer2} key={processo.id}>
+                                <div className={styles.img}>
+                                    <img src={processo.iconLink} alt={processo.name} />
+                                </div>
+                                <div>
+                                    <Link href={`processo/${processo.id}`}>
+                                        <a>{processo.name}</a>
+                                    </Link>
+                                </div>
+                            </div>
+                            <div></div>
                         </div>
-                        <div>
-                        <Link href={`processo/${processo.id}`}>
-                            <a>{processo.name}</a>
-                        </Link>
-                     </div>
-                    </div>
-                )
-            })}
+                    )
+                })}
             </ul>
         </main>
     )
 }
 
-export const getStaticProps : GetStaticProps = async () => {
- const { data } = await api.get('files')
+export const getStaticProps: GetStaticProps = async () => {
+    const { data } = await api.get('files')
 
- const todososprocessos = data.files.map(TodosProcessos => {
-    return{
-        id: TodosProcessos.id,
-        name: TodosProcessos.name,
-        iconLink: TodosProcessos.iconLink
-    }
- })
+    const todososprocessos = data.files.map(TodosProcessos => {
+        return {
+            id: TodosProcessos.id,
+            name: TodosProcessos.name,
+            iconLink: TodosProcessos.iconLink
+        }
+    })
 
-    return{
-        props:{
+    return {
+        props: {
             processos: data.files,
         },
         revalidate: 60 * 10
-    }  
+    }
 }
