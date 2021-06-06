@@ -82,23 +82,28 @@
 
 
 /*Pagina de proceessos*/
-.principalContainer2{
-  box-sizing: border-box;
+.containerGeral{
   display: grid;
-  grid-template-columns: 40% 60%;
-  margin: 1rem 0rem 0rem 0rem;
-  padding-bottom: 2vh;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-
-    a{
-      justify-self: start;
-      text-decoration: none;
-      color: var(--black);
-      font-size: 14pt;
-      width: 2;
-
+  grid-template-columns: 1fr 1fr 1fr;
+  .principalContainer2{
+    box-sizing: border-box;
+    display: grid;
+    
+    grid-template-columns: 1fr 2fr;
+    margin: 1rem 0rem 0rem 0rem;
+    padding-bottom: 2vh;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  
+      a{
+        justify-self: start;
+        text-decoration: none;
+        color: var(--black);
+        font-size: 14pt;
+        width: 2;
+  
+      }
+      .img{
+        text-align: center;
+      }
     }
-    .img{
-      text-align: end;
-    }
-  }
+}
