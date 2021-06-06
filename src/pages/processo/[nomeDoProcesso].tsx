@@ -21,38 +21,41 @@ export default function paginadeprocessos({ processos }: ProcessoProps) {
     return (
         <div className={styles.principalContainer}>
 
-                <button>
-                    <img src="/arrow-left.svg" alt="voltar" />
-                </button>
+            <button>
+                <img src="/arrow-left.svg" alt="voltar" />
+            </button>
 
-           <div className={styles.secondContainer} >
+            <div className={styles.secondContainer} >
 
                 <div className={styles.filesInContainer}>
-            <ul >
-                    {processos.map(processo => {
-                        return (
-                            <div className={styles.process} key={processo.id}>
-                                <div className={styles.image}>
-                                    <img src={processo.iconLink} alt={processo.name} />
+                    <ul >
+                        {processos.map(processo => {
+                            return (
+                                <div className={styles.process} key={processo.id}>
+                                    <div className={styles.image}>
+                                        <img src={processo.iconLink} alt={processo.name} />
+                                    </div>
+                                    <div>
+                                        <Link href={`processo/${processo.id}`}>
+                                            <a>{processo.name}</a>
+                                        </Link>
+                                    </div>
                                 </div>
-                                <div>
-                                    <Link href={`processo/${processo.id}`}>
-                                        <a>{processo.name}</a>
-                                    </Link>
-                                </div>
-                            </div>
-                        )
-                    })}
-                </ul>
-            </div>
-                
-                <div className={styles.openFileContainer} >
-                <iframe> 
-                    
-                </iframe>
+                            )
+                        })}
+                    </ul>
                 </div>
 
-           </div>
+                <div className={styles.openFileContainer} >
+                    <section>
+                        <iframe>
+
+                        </iframe>
+                    </section>
+
+                </div>
+
+            </div>
         </div>
     )
 }
