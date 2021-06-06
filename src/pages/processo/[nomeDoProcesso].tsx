@@ -20,9 +20,12 @@ export default function paginadeprocessos({ processos }: ProcessoProps) {
     return (
         <div className={styles.principalContainer}>
             <button>
-                <img src="/arrow-left.svg" alt="voltar" />
+                <Link href={`/processos`}>
+                    <img src="/arrow-left.svg" alt="voltar" />
+                </Link>
             </button>
             <div className={styles.secondContainer} >
+                <h1>Aqui estão todos os arquivos deste processo</h1>
                 <div className={styles.filesInContainer}>
                     <ul >
                         {processos.map(processo => {
@@ -32,25 +35,13 @@ export default function paginadeprocessos({ processos }: ProcessoProps) {
                                         <img src={processo.iconLink} alt={processo.name} />
                                     </div>
                                     <div className={styles.processText}>
-                                        <Link href={`processo/${processo.id}`}>
-                                            <a>{processo.name}</a>
-                                        </Link>
+                                        <a href="https://drive.google.com/file/d/1pGaFdS-Vhreh33RUvcpiZbqfbowxVyo0/view?usp=drivesdk" target="_blank" >{processo.name}</a>
                                     </div>
                                 </div>
                             )
                         })}
                     </ul>
                 </div>
-
-                <div className={styles.openFileContainer} >
-                    <section>
-                        <iframe>
-
-                        </iframe>
-                    </section>
-
-                </div>
-
             </div>
         </div>
     )
@@ -74,7 +65,8 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
         return {
             id: process.id,
             name: process.name,
-            iconLink: process.iconLink
+            iconLink: process.iconLink,
+            webViewLink: process.webViewLink,
         }
     }
     )

@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
 
   const [user, setUser] = useState(null);
 
-  const actionLoginDataGoogle = async (user) =>{
+  const actionLoginDataGoogle = async (user) => {
     let newUser = {
       id: user.uid,
       name: user.displayName
@@ -18,9 +18,9 @@ function MyApp({ Component, pageProps }) {
     setUser(newUser)
   }
 
-  if(user === null){
-    return(
-      <Login onReceiveGoogle={actionLoginDataGoogle}/>
+  if (user === null) {
+    return (
+      <Login onReceiveGoogle={actionLoginDataGoogle} />
     )
 
 
@@ -32,9 +32,9 @@ function MyApp({ Component, pageProps }) {
       </Head>
 
       <Header user={user} />
-        <main>
-          <Component {...pageProps} />
-        </main>
+      <main>
+        <Component {...pageProps} />
+      </main>
       <Footer />
     </>
   )
