@@ -35,13 +35,11 @@ export function SearchInput(processes) {
     <div>
       <form onSubmit={(event) => {
       event.preventDefault();
-      console.log(formik.values);
       onSearchProcesses(formik.values.userText)
     }}
     >
 
       <div className={styles.siContainer}>
-        <Link href={'/pesquisa'}>
         <input
           className={styles.siInput}
           type="text"
@@ -51,7 +49,6 @@ export function SearchInput(processes) {
           onChange={formik.handleChange}
           value={formik.values.userText}
         />
-        </Link>
         <button type="submit">
           pesquisar
         </button>
@@ -63,10 +60,10 @@ export function SearchInput(processes) {
   );
 }
 
-
 async function onSearchProcesses(props){
   let results = props
   const {data} = await api.get(`pesquisa/${results}`)
+  console.log(data.files)
 
 const processes = data.files.map(processes => {
       return{
