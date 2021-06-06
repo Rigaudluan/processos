@@ -8,8 +8,9 @@ new BlipChat()
     .withCustomCommonUrl('https://chat.blip.ai/')
     .build();
 
-export function Cesinha() {
-          return (
+export default function Cesinha() {
+        this.setState({}) ()
+           return (
                <div className={styles.cesinhaContainer}>
                 <div className={styles.icon}></div>
                 <div className={styles.messageBox}>
@@ -18,6 +19,6 @@ export function Cesinha() {
                         <p className={styles.messageTime}>10:00</p>
                     </div>
                 </div>
-            </div>  
-    )   
-}
+            </div>  
+           )
+        }  
