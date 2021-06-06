@@ -17,7 +17,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ### Pré-requisitos
 
-Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas: **Node.js** e **Yarn**. Além disto é bom ter um editor para trabalhar com o código como **VSCode**.
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas: [Node.js](https://nodejs.org/en/download/) e [Yarn](https://yarnpkg.com/getting-started/install). Além disto é bom ter um editor para trabalhar com o código como **VSCode**.
 
 ### 🎲 Rodando o Front End :
 
