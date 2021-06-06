@@ -8,6 +8,20 @@
         border: none;
     }
 
+    p{
+        text-decoration: none;
+        color: var(--lead);
+
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin: 0px 20px 0px auto;
+
+        span{
+            color: var(--orange);
+            font-weight: 700;
+        }
+    }
+   
 
     a{
         text-decoration: none;

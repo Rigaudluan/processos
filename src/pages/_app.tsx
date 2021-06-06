@@ -6,12 +6,26 @@ import { useState } from 'react';
 import Login from './login'
 
 function MyApp({ Component, pageProps }) {
-  const [user, setUser] = useState();
-  
-  if(user == null){
+
+  const [user, setUser] = useState(null);
+
+  const actionLoginDataGoogle = async (user) =>{
+    let newUser = {
+      id: user.uid,
+      name: user.displayName
+    }
+
+    setUser(newUser)
+  }
+
+  if(user === null){
     return(
-      <Login />
+
+      <Login onReceiveGoogle={actionLoginDataGoogle}/>
+      
     )
+
+
   } else return (
     <>
       <Head>
@@ -19,7 +33,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
       </Head>
 
-      <Header />
+      <Header user={user} />
         <main>
           <Component {...pageProps} />
         </main>
@@ -27,6 +41,8 @@ function MyApp({ Component, pageProps }) {
     </>
   )
 }
+
+
 
 
 export default MyApp

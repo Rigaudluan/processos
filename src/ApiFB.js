@@ -1,15 +1,18 @@
-import Firebase from 'firebase/app';
+import firebase from 'firebase/app';
 import 'firebase/firebase-auth';
 import 'firebase/firebase-firestore'
 
-import firebaseConfig from './firebaseConfig'
+import firebaseConfig from './fireabaseConfig'
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+//decide o database
 const db = firebaseApp.firestore();
 
-export default{
-    
-    loginWithGoogle: async ()=>{
+export default {
+
+    //Loga na conta google
+    googleLogar: async () =>{
         const provider = new firebase.auth.GoogleAuthProvider();
         let result = await firebase.auth().signInWithPopup(provider)
         return result;

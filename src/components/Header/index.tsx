@@ -3,13 +3,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {useRouter} from 'next/router'
 
-export function Header(){
+export function Header(props){
 
     /* Descobre página e muda o estado do page */
     var page = true;
     const router = useRouter();
     const RouterName = router.pathname
-     if(RouterName == "/paginainicial"){
+     if(RouterName == "/"){
             page = true
         }else page = !page
     
@@ -24,12 +24,16 @@ export function Header(){
                     />
                     </a>
                 </Link>
-                <Link href={`/paginainicial`}>
+                <Link href={`/`}>
                     <a className =  { page? styles.selected : styles.off }> Início </a>
                 </Link>
                 <Link href={`/processos`}>
                     <a className = { page? styles.off  : styles.selected} >Processos</a>
                 </Link>
+                <p className={styles.selected} >
+                    Olá, <span>{props.user.name}</span>
+                </p>
         </header>
     );
 }
+
