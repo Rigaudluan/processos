@@ -5,17 +5,16 @@ import { TitleProcess } from "../../components/TitleProcess/titleProcess";
 import { api } from "../../services/api";
 import Link from "next/link";
 import Image from "next/image";
+import { randomInt } from "crypto";
 
 type TodosProcessos = {
     id: string,
     name: string,
     iconLink: string
 }
-
 type ProcessoProps = {
     processos: TodosProcessos[];
 }
-
 
 export default function paginadeprocessos({ processos }: ProcessoProps) {
     return (
@@ -23,9 +22,7 @@ export default function paginadeprocessos({ processos }: ProcessoProps) {
             <button>
                 <img src="/arrow-left.svg" alt="voltar" />
             </button>
-
             <div className={styles.secondContainer} >
-
                 <div className={styles.filesInContainer}>
                     <ul >
                         {processos.map(processo => {
