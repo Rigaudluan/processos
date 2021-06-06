@@ -1,4 +1,5 @@
-import styles from './styles.module.scss'
+import React from 'react';
+import styles from './styles.module.scss';
 import { BlipChat } from "blip-chat-widget";
 
 new BlipChat()
@@ -7,9 +8,9 @@ new BlipChat()
     .withCustomCommonUrl('https://chat.blip.ai/')
     .build();
 
-export default function Cesinha() {
-    return (
-            <div className={styles.cesinhaContainer}>
+export function Cesinha() {
+          return (
+               <div className={styles.cesinhaContainer}>
                 <div className={styles.icon}></div>
                 <div className={styles.messageBox}>
                     <div className={styles.messagePopup}>
@@ -17,6 +18,6 @@ export default function Cesinha() {
                         <p className={styles.messageTime}>10:00</p>
                     </div>
                 </div>
-            </div>
-    ) 
+            </div>  
+    )   
 }
