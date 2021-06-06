@@ -11,15 +11,15 @@ export default function SearchPage(processes) {
 export async function onSearchProcesses(props) {
 
     let results = props
-    console.log()
     const { data } = await api.get(`pesquisa/${results}`)
+    console.log(data.files)
 
-    const processes = data.files.map(processes => {
-        return {
-            id: processes.id,
-            name: processes.name,
-            iconLink: processes.iconLink
+        const processes = data.files.map(processes => {
+            return {
+                id: processes.id,
+                name: processes.name,
+                iconLink: processes.iconLink
+            }
         }
-    }
     )
 }

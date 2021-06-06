@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import Formik, { useFormik } from 'formik';
 import styles from './styles.module.scss';
 import { api } from '../../services/api';
-import { onSearchProcesses } from '../../pages/pesquisa';
 
 
-export function SearchInput() {
+export function SearchInput(processes) {
   function useFormik({
     initialValues,
   }) {
@@ -53,11 +52,29 @@ export function SearchInput() {
         <button type="submit">
           pesquisar
         </button>
+
+        <p></p>
       </div>
     </form>
-    <p></p>
     </div>
   );
 }
 
 
+async function onSearchProcesses(props){
+  let results = props
+  const {data} = await api.get(`pesquisa/${results}`)
+
+const processes = data.files.map(processes => {
+      return{
+          id: processes.id,
+          name: processes.name,
+          iconLink: processes.iconLink
+      }
+    }
+  )
+  return{
+    processes: processes
+  }
+  console.log(processes)
+}
