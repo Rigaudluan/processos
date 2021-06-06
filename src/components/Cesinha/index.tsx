@@ -1,6 +1,12 @@
 import styles from './styles.module.scss'
 import { BlipChat } from "blip-chat-widget";
 
+new BlipChat()
+    .withAppKey('Y2VzaW5oYTE6M2U1ODQxNmQtZTE5ZS00NzkyLTk3OTUtMmM2NDU0YjQ1ZGU0')
+    .withButton({ color: "#F7580B", "icon": "" })
+    .withCustomCommonUrl('https://chat.blip.ai/')
+    .build();
+
 export default function Cesinha() {
     return (
             <div className={styles.cesinhaContainer}>
@@ -12,5 +18,5 @@ export default function Cesinha() {
                     </div>
                 </div>
             </div>
-    )
+    ) 
 }
