@@ -5,7 +5,7 @@ import { api } from '../../services/api';
 import Link from 'next/link';
 
 
-export function SearchInput(processes) {
+export function SearchInput() {
   function useFormik({
     initialValues,
   }) {
@@ -52,7 +52,6 @@ export function SearchInput(processes) {
         <button type="submit">
           pesquisar
         </button>
-
         <p></p>
       </div>
     </form>
@@ -73,6 +72,7 @@ const processes = data.files.map(processes => {
       }
     }
   )
+
   return{
     processes: processes
   }
