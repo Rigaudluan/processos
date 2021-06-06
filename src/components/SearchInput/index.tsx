@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Formik, { useFormik } from 'formik';
 import styles from './styles.module.scss';
 import { api } from '../../services/api';
+import Link from 'next/link';
 
 
 export function SearchInput(processes) {
@@ -40,6 +41,7 @@ export function SearchInput(processes) {
     >
 
       <div className={styles.siContainer}>
+        <Link href={'/pesquisa'}>
         <input
           className={styles.siInput}
           type="text"
@@ -49,6 +51,7 @@ export function SearchInput(processes) {
           onChange={formik.handleChange}
           value={formik.values.userText}
         />
+        </Link>
         <button type="submit">
           pesquisar
         </button>
@@ -76,5 +79,4 @@ const processes = data.files.map(processes => {
   return{
     processes: processes
   }
-  console.log(processes)
 }
