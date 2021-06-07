@@ -10,7 +10,8 @@ import { randomInt } from "crypto";
 type TodosProcessos = {
     id: string,
     name: string,
-    iconLink: string
+    iconLink: string,
+    webViewLink: string
 }
 type ProcessoProps = {
     processos: TodosProcessos[];
@@ -35,7 +36,7 @@ export default function paginadeprocessos({ processos }: ProcessoProps) {
                                         <img src={processo.iconLink} alt={processo.name} />
                                     </div>
                                     <div className={styles.processText}>
-                                        <a href="https://drive.google.com/file/d/1pGaFdS-Vhreh33RUvcpiZbqfbowxVyo0/view?usp=drivesdk" target="_blank" >{processo.name}</a>
+                                        <a href={processo.webViewLink} target="_blank" >{processo.name}</a>
                                     </div>
                                 </div>
                             )
