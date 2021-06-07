@@ -1,9 +1,9 @@
 .footerContainer{
-   position:absolute;
-   bottom:auto;
+   position:fixed;
    width:100%;
    padding: 0 1% 0.5% 1%;
    height: 20vh;
+   bottom:0;
 }
 .footerObject1{
    float: left;
