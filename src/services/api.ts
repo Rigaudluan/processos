@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const linkApi = 'http://9911bbba2b2e.ngrok.io'
+export const linkApi = 'http://eec4ab6f1e75.ngrok.io'
 
 export const api = axios.create({
     baseURL: linkApi
