@@ -7,12 +7,8 @@ import Login from './login'
 
 function MyApp({ Component, pageProps }) {
 
-  let tempUser = {
-    id:'123',
-    name:'matheus'
-  }
 
-  const [user, setUser] = useState(tempUser);
+  const [user, setUser] = useState(null);
 
   const actionLoginDataGoogle = async (user) => {
     let newUser = {
