@@ -67,9 +67,7 @@ export function SearchInput() {
   });
   if(formik.values.userText != ''){
     SearchState = false
-  }
-  
-  return (
+  } else return (
     <div>
       <form onSubmit={(event) => {
         event.preventDefault();
