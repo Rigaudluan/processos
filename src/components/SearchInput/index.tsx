@@ -93,7 +93,7 @@ export function SearchInput() {
         <div className={styles.result}>
           <section>
             <img className={SearchState ? styles.active : styles.desable} src="/notSearchedYet.png" alt="" />
-            <img className={!SearchValid ? styles.active : styles.desable} src="/notFound.png" alt="" />
+            <img className={SearchValid ? styles.desable : styles.active} src="/notFound.png" alt="" />
             </section>
 
             <div className={!SearchState ? styles.active : styles.desable} >
@@ -102,7 +102,7 @@ export function SearchInput() {
                   <a>{name}</a>         
                 </Link>
             </div>
-            
+
           </div>
         </div>
       </form>
