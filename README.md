@@ -26,7 +26,9 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 $ git clone https://github.com/theuslefone/processos.git
 
 # Instale as dependências
-$ yarn add sass react react-router-dom react-dom yup next formik firebase axios blip-chat-widget json-server typescript @types/node @types/react @types/typescript
+$ yarn add sass react react-router-dom react-dom yup next formik firebase axios blip-chat-widget @types/typescript
+
+$ yarn add -D typescript @types/node @types/react
 
 # Execute a aplicação em modo de desenvolvimento
 $ yarn dev
