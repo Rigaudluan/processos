@@ -27,9 +27,6 @@ export function Header(props){
                 <Link href={`/`}>
                     <a className =  { page? styles.selected : styles.off }> Início </a>
                 </Link>
-                <Link href={`/processos`}>
-                    <a className = { page? styles.off  : styles.selected} >Processos</a>
-                </Link>
                 <p className={styles.selected} >
                     Olá, <span>{props.user.name}</span>
                 </p>
