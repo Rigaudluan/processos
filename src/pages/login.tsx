@@ -22,11 +22,11 @@ export default function login({ onReceiveGoogle }) {
 
                 <h1>Para continuar é só fazer o login com a sua conta google!</h1>
 
-                <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+                
 
                 <div className={styles.googleBtn}>
                     <div className={styles.googleIconWrapper}>
-                        <img className={styles.googleIcon} src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
+                        <img className={styles.googleIcon} onClick={actionLoginGoogle}   src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
                     </div>
                     <button onClick={actionLoginGoogle} className={styles.btnText} ><b>Logue com o google!</b></button>
                 </div>
