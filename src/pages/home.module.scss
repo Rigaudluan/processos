@@ -1,117 +1,106 @@
 /*Login*/
-.loginContainer{
-  background: var(--white); 
-  border: 1px solid var(--lead);
-  max-width: 50vw;
-  min-height: 50vh;
 
-  margin: auto;
-  margin-top: 10vh;
-  text-align: center;
-  border-radius: 10px;
-  padding: 40px 0px 40px 0px;
-
-  h1{
-    font-weight:lighter;
-  }
+.loginContainer {
+    background: var(--white);
+    border: 1px solid var(--lead);
+    max-width: 50vw;
+    min-height: 50vh;
+    margin: auto;
+    margin-top: 10vh;
+    text-align: center;
+    border-radius: 10px;
+    padding: 40px 0px 40px 0px;
+    h1 {
+        font-weight: lighter;
+    }
 }
+
 
 /*Index*/
-.mainContainer{
-  display: grid;
-  grid-template-columns: 3fr 1fr 3fr;
-  .searchInputContainer{
-      h2{
-        margin-bottom: 2vh;
-        text-align: center;
-      }
-  }
-  hr{
-    width: 1px;
-    justify-self: center;
-  }
-  .processesContainer{
 
-
-    ul{
-      width: 30vw;
-    }
-
-    .containerGeral{
-      display: grid;
-      grid-template-columns: 2fr 1fr 2fr;
-      .principalContainer2{
-        width: 30vw;
-        box-sizing: border-box;
-        display: grid;
-        
-        grid-template-columns: 1fr 2fr;
-        margin: 1rem 0rem 0rem 0rem;
-        padding-bottom: 2vh;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-      
-          a{
-            justify-self: start;
-            text-decoration: none;
-            color: var(--black);
-            font-size: 14pt;
-            width: 2;
-      
-          }
-          .img{
+.mainContainer {
+    display: grid;
+    grid-template-columns: 3fr 1fr 3fr;
+    .searchInputContainer {
+        h2 {
+            margin-bottom: 2vh;
             text-align: center;
-          }
         }
     }
-  }
-
+    hr {
+        width: 1px;
+        justify-self: center;
+    }
+    .processesContainer {
+        ul {
+            width: 30vw;
+        }
+        .containerGeral {
+            display: grid;
+            grid-template-columns: 2fr 1fr 2fr;
+            .principalContainer2 {
+                width: 30vw;
+                box-sizing: border-box;
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                margin: 1rem 0rem 0rem 0rem;
+                padding-bottom: 2vh;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+                a {
+                    justify-self: start;
+                    text-decoration: none;
+                    color: var(--black);
+                    font-size: 14pt;
+                    width: 2;
+                }
+                .img {
+                    text-align: center;
+                }
+            }
+        }
+    }
 }
-
-
 
 $white: #fff;
 $google-blue: #4285f4;
 $button-active-blue: #1669F2;
-
 .googleBtn {
-  width: 184px;
-  height: 42px;
-  background-color: $google-blue;
-  border-radius: 2px;
-  box-shadow: 0 3px 4px 0 rgba(0,0,0,.25);
-  margin-left: 280px;
-  margin-top: 60px;
-
-  .googleIconWrapper {
-    position: absolute;
-    margin-top: 1px;
-    margin-left: 1px;
-    width: 40px;
-    height: 40px;
+    width: 184px;
+    height: 42px;
+    background-color: $google-blue;
     border-radius: 2px;
-    background-color: $white;
-  }
-  .googleIcon {
-    position: absolute;
-    margin-top: 11px;
-    margin-left: -10px;
-    width: 18px;
-    height: 18px;
-  }
-  .btnText {
-    float: right;
-    margin: 11px 2px 0 0;
-    color: $button-active-blue;
-    font-size: 14px;
-    letter-spacing: 0.2px;
-    font-family: "Roboto";
-  }
-  &:hover {
-    box-shadow: 0 0 6px $google-blue;
-  }
-  &:active {
-    background: $button-active-blue;
-  }
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .25);
+    margin-left: 280px;
+    margin-top: 60px;
+    .googleIconWrapper {
+        position: absolute;
+        margin-top: 1px;
+        margin-left: 1px;
+        width: 40px;
+        height: 40px;
+        border-radius: 2px;
+    }
+    .googleIcon {
+        position: absolute;
+        margin-top: 11px;
+        margin-left: -10px;
+        width: 18px;
+        height: 18px;
+    }
+    .btnText {
+        float: right;
+        margin: 11px 2px 0 0;
+        color: $button-active-blue;
+        font-size: 14px;
+        letter-spacing: 0.2px;
+        font-family: "Roboto";
+    }
+    &:hover {
+        box-shadow: 0 0 6px $google-blue;
+    }
+    &:active {
+        background: $button-active-blue;
+    }
 }
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
