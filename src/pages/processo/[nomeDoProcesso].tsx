@@ -21,7 +21,7 @@ export default function paginadeprocessos({ processos }: ProcessoProps) {
     return (
         <div className={styles.principalContainer}>
             <button>
-                <Link href={`/processos`}>
+                <Link href={`/index`}>
                     <img src="/arrow-left.svg" alt="voltar" />
                 </Link>
             </button>
