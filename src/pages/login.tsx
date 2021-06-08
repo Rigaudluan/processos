@@ -20,13 +20,11 @@ export default function login({ onReceiveGoogle }) {
             <main className={styles.loginContainer}>
                 <img src="/logo.png" width={100} alt="Cesar Processos" />
 
-                <h1>Para continuar é só fazer o login com a sua conta google!</h1>
-
-                
+                <h1>Para continuar é só fazer o login com a sua conta google</h1>
 
                 <div className={styles.googleBtn}>
                     <div className={styles.googleIconWrapper}>
-                        <img className={styles.googleIcon} onClick={actionLoginGoogle}   src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
+                        <img className={styles.googleIcon} src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
                     </div>
                     <button onClick={actionLoginGoogle} className={styles.btnText} ><b>Logue com o google!</b></button>
                 </div>
