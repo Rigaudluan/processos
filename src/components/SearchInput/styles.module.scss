@@ -33,4 +33,24 @@
         padding: 10px;
     }
 
+    .result{
+        align-self: center;
+        margin-top: 7vh;
+        
+
+        
+        a{
+            text-decoration: none;
+            color: var(--black);
+            font-size: 14pt;
+            width: 2;
+            margin:0 10vw 0 5vw;
+            
+
+      
+          }
+          .img{
+            text-align: center;
+          }
+    }
 }
