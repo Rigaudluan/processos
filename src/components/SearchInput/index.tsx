@@ -65,6 +65,9 @@ export function SearchInput() {
 
     },
   });
+  if(formik.values.userText != ''){
+    SearchState = false
+  }
   
   return (
     <div>
