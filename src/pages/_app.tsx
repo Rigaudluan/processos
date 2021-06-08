@@ -21,7 +21,14 @@ function MyApp({ Component, pageProps }) {
 
   if (user === null) {
     return (
+      <>
+      <Head>
+        <title>Cesar Processos</title>
+        <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+      </Head>
       <Login onReceiveGoogle={actionLoginDataGoogle} />
+       </>
+      
     )
 
 
