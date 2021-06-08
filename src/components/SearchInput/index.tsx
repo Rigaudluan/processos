@@ -15,6 +15,7 @@ type processes = {
 export function SearchInput() {
 
   var SearchState = true
+  var SearchValid = true
   
   const [imageProcess, setImage] = useState(null)
   const [id, setId] = useState(null)
@@ -22,8 +23,8 @@ export function SearchInput() {
 
   async function onSearchProcesses(props) {
     let results = props
+   try{
     const { data } = await api.get(`pesquisa/${results}`)
-    let resultado = { id: "10RzPg3BurxA1FwpKnQ_JTrO5tZPoe6iF", name: "Cesar School", mimeType: "application/vnd.google-apps.folder", webViewLink: "https://drive.google.com/drive/folders/10RzPg3BurxA1FwpKnQ_JTrO5tZPoe6iF", iconLink: "https://drive-thirdparty.googleusercontent.com/16/type/application/vnd.google-apps.folder+shared" }
 
     const processes : processes = data
     setName(processes.name)
@@ -33,7 +34,11 @@ export function SearchInput() {
     return {
       processes: processes
     }
+  }catch{
+    alert('Não achamos o que você procurava')
+    SearchValid = false
   }
+}
 
   function useFormik({
     initialValues,
@@ -83,7 +88,10 @@ export function SearchInput() {
             pesquisar
         </button>
         <div className={styles.result}>
-          <section><img className={SearchState ? styles.active : styles.desable} src="/notSearchedYet.png" alt="" /></section>
+          <section>
+            <img className={SearchState ? styles.active : styles.desable} src="/notSearchedYet.png" alt="" />
+            <img className={!SearchValid ? styles.active : styles.desable} src="/notFound.png" alt="" />
+            </section>
         <img src={imageProcess} alt=""/>
           <Link href={`processo/${id}`}>        
           <a>{name}</a>         
@@ -94,4 +102,3 @@ export function SearchInput() {
     </div>
   );
 }
-{/* <img src={imageProcess} alt="pasta"/> */}
