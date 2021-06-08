@@ -15,10 +15,9 @@ type processes = {
 }
 export function SearchInput() {
 
-  const [image, setImage] = useState(null)
+  const [imageProcess, setImage] = useState(null)
   const [id, setId] = useState(null)
   const [name, setName] = useState(null)
-  const [tempProcesses, setTempProcesses] = useState(null)
 
   async function onSearchProcesses(props) {
     let results = props
@@ -34,7 +33,6 @@ export function SearchInput() {
       processes: processes
     }
   }
-  console.log(tempProcesses)
 
   function useFormik({
     initialValues,
@@ -82,10 +80,16 @@ export function SearchInput() {
           <button type="submit">
             pesquisar
         </button>
-          <p>{tempProcesses}</p>
+        <div className={styles.result}>
+        <img src={imageProcess} alt=""/>
+          <Link href={`processo/${id}`}>        
+          <a>{name}</a>
+          
+          </Link>
+          </div>
         </div>
       </form>
     </div>
   );
 }
-
+{/* <img src={imageProcess} alt="pasta"/> */}
