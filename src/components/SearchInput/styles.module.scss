@@ -1,65 +1,63 @@
-.siContainer{
+.siContainer {
     text-align: center;
     margin-bottom: 7vh;
-
-    .siTitle{
+    .siTitle {
         margin-bottom: 32px;
         font-family: Montserrat;
         font-style: normal;
         font-weight: normal;
         font-size: 22px;
         line-height: 27px;
-        span{
+        span {
             color: var(--orange) !important;
         }
     }
-   
-    .siInput{
-        width:462px;
-        height:45px;
+    .siInput {
+        width: 462px;
+        height: 45px;
         border: 1px solid var(--Gainsboro);
         border-radius: 10px 0px 0px 10px;
         padding: 20px;
         letter-spacing: 5px;
     }
-    
-
-    button{
+    button {
         background: transparent;
         border-radius: 0px 10px 10px 0px;
         border: 1px solid var(--Gainsboro);
-        width:162px;
-        height:45px;
+        width: 162px;
+        height: 45px;
         padding: 10px;
     }
-
-    .result{
+    .result {
         align-self: center;
         margin-top: 7vh;
-        
-        section{
-            img{
-            &.active{
+        div {
+            &.active {
                 display: initial;
             }
-            &.desable{
+            &.desable {
                 display: none;
             }
+        }
+        section {
+            img {
+                &.active {
+                    display: initial;
+                }
+                &.desable {
+                    display: none;
+                }
             }
         }
-        
-        a{
+        a {
             text-decoration: none;
             color: var(--black);
             font-size: 14pt;
             width: 2;
-            margin:0 10vw 0 5vw;
-            
-
-      
-          }
-          .img{
+            margin: 0 10vw 0 5vw;
+        }
+        .img {
             text-align: center;
-          }
+        }
     }
 }

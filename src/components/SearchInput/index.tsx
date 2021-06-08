@@ -67,7 +67,9 @@ export function SearchInput() {
   });
   if(formik.values.userText != ''){
     SearchState = false
-  } else return (
+  }
+
+  return (
     <div>
       <form onSubmit={(event) => {
         event.preventDefault();
@@ -93,10 +95,14 @@ export function SearchInput() {
             <img className={SearchState ? styles.active : styles.desable} src="/notSearchedYet.png" alt="" />
             <img className={!SearchValid ? styles.active : styles.desable} src="/notFound.png" alt="" />
             </section>
-        <img src={imageProcess} alt=""/>
-          <Link href={`processo/${id}`}>        
-          <a>{name}</a>         
-          </Link>
+
+            <div className={!SearchState ? styles.active : styles.desable} >
+                  <img src={imageProcess} alt=""/>
+                <Link href={`processo/${id}`}>        
+                  <a>{name}</a>         
+                </Link>
+            </div>
+            
           </div>
         </div>
       </form>
