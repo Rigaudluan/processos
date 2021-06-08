@@ -3,7 +3,6 @@ import Formik, { useFormik } from 'formik';
 import styles from './styles.module.scss';
 import { api } from '../../services/api';
 import Link from 'next/link';
-import { timeStamp } from 'console';
 
 
 type processes = {
@@ -15,6 +14,8 @@ type processes = {
 }
 export function SearchInput() {
 
+  var SearchState = true
+  
   const [imageProcess, setImage] = useState(null)
   const [id, setId] = useState(null)
   const [name, setName] = useState(null)
@@ -59,6 +60,7 @@ export function SearchInput() {
 
     },
   });
+  
   return (
     <div>
       <form onSubmit={(event) => {
@@ -81,10 +83,10 @@ export function SearchInput() {
             pesquisar
         </button>
         <div className={styles.result}>
+          <section><img className={SearchState ? styles.active : styles.desable} src="/notSearchedYet.png" alt="" /></section>
         <img src={imageProcess} alt=""/>
           <Link href={`processo/${id}`}>        
-          <a>{name}</a>
-          
+          <a>{name}</a>         
           </Link>
           </div>
         </div>
