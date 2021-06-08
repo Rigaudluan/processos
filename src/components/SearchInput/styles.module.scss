@@ -37,7 +37,16 @@
         align-self: center;
         margin-top: 7vh;
         
-
+        section{
+            img{
+            &.active{
+                display: initial;
+            }
+            &.desable{
+                display: none;
+            }
+            }
+        }
         
         a{
             text-decoration: none;
