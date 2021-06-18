@@ -61,3 +61,15 @@
         }
     }
 }
+
+@media (min-width: 359px) {
+    .siContainer {
+        .siInput {
+            border-radius: 10px 10px 10px 10px;
+            width: 100vh;
+        }
+        button {
+            border-radius: 10px 10px 10px 10px;
+        }
+    }
+}

@@ -109,3 +109,14 @@ $button-active-blue: #1669F2;
         }
     }
 }
+
+@media (min-width: 359px) {
+    .mainContainer {
+        .processesContainer {
+            display: none;
+        }
+        hr {
+            display: none;
+        }
+    }
+}

@@ -1,48 +1,45 @@
-.headerContainer{
+.headerContainer {
     background: var(--white);
     display: flex;
     border-bottom: 2px solid var(--Gainsboro);
-    
-    button{
+    button {
         background-color: transparent;
         border: none;
     }
-
-    p{
+    p {
         text-decoration: none;
         color: var(--lead);
-
         padding-top: 20px;
         padding-bottom: 20px;
         margin: 0px 20px 0px auto;
-
-        span{
+        span {
             color: var(--orange);
             font-weight: 700;
         }
     }
-   
-
-    a{
+    a {
         text-decoration: none;
         color: var(--lead);
-
         padding-top: 20px;
         padding-bottom: 20px;
         margin-left: 49px;
-        &.off{
-            color: var(--lead);  
+        &.off {
+            color: var(--lead);
         }
-
-        &.selected{
+        &.selected {
             color: var(--orange);
             font-weight: 700;
         }
     }
-    
-    .imageDetail{
+    .imageDetail {
         padding-top: initial;
         padding-bottom: initial;
         margin-left: 49px;
+    }
+}
+
+@media (min-width: 359px) {
+    .headerContainer {
+        width: 100vh;
     }
 }

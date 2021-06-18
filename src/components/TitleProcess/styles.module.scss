@@ -1,7 +1,13 @@
-.title{
+.title {
     font-size: 20pt;
     font-weight: lighter;
     text-align: center;
     margin-top: 10vh;
     margin-bottom: 5vh;
+}
+
+@media (min-width: 359px) {
+    .title {
+        width: 100vh;
+    }
 }
